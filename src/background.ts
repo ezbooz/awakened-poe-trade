@@ -33,6 +33,10 @@ if (!config.get('hardwareAcceleration')) {
 // @TODO: remove after resolved https://github.com/electron/electron/issues/23664
 app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors')
 
+if (process.platform === 'linux') {
+  app.commandLine.appendSwitch('no-sandbox')
+}
+
 app.on('ready', async () => {
   logger.info('App is running', {
     source: 'init',
