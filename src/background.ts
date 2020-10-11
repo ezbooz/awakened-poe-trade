@@ -34,7 +34,7 @@ if (!config.get('hardwareAcceleration')) {
 app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors')
 
 if (process.platform === 'linux') {
-  app.commandLine.appendSwitch('no-sandbox')
+  app.commandLine.appendSwitch('--no-sandbox')
 }
 
 app.on('ready', async () => {
